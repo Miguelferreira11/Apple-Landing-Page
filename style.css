@@ -1,0 +1,368 @@
+:root {
+--fonte-texto: "Inter", sans-serif;
+
+--cor-texto: #1d1d1f;
+--cor-texto-claro: #f5f5f7;
+
+--cor-fundo-claro: #f5f5f7;
+--cor-fundo-escuro: #000;
+
+--cor-aviso: #6e6e73;
+--cor-aviso-escuro: #86868b;
+
+--cor-azul: #0071e3;
+--cor-azul-hover: #0076df;
+
+--cor-link: #0066cc;
+--cor-link-escuro: #2997ff;
+
+
+}
+
+/* Reset */
+
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Corpo */
+
+body {
+font-family: var(--fonte-texto);
+font-size: 17px;
+line-height: 1.48;
+letter-spacing: -0.02em;
+color: var(--cor-texto);
+}
+
+/* Imagens */
+
+img {
+display: block;
+max-width: 100%;
+}
+
+/* Conteúdo principal */
+
+main {
+max-width: 2560px;
+margin: 0 auto;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+position: sticky;
+top: 0;
+z-index: 10;
+
+height: 44px;
+
+background-color: rgba(255, 255, 255, 0.8);
+
+backdrop-filter: saturate(180%) blur(20px);
+-webkit-backdrop-filter: saturate(180%) blur(20px);
+
+
+}
+
+.cabecalho-nav {
+max-width: 1024px;
+height: 44px;
+
+margin: 0 auto;
+padding: 0 22px;
+
+
+}
+
+.cabecalho-nav-lista {
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+height: 44px;
+
+margin: 0 -8px;
+
+list-style: none;
+
+
+}
+
+.cabecalho-nav-link {
+color: #000;
+
+text-decoration: none;
+
+font-size: 12px;
+
+white-space: nowrap;
+
+transition: opacity 0.2s ease;
+
+
+}
+
+.cabecalho-nav-link:hover {
+opacity: 0.65;
+}
+
+.cabecalho-nav-icone {
+font-size: 16px;
+}
+
+/* Seção */
+
+.secao {
+width: 100%;
+}
+
+/* Blocos */
+
+.bloco {
+position: relative;
+
+min-height: 580px;
+
+padding: 48px 0;
+
+overflow: hidden;
+
+background-color: var(--cor-fundo-claro);
+
+
+}
+
+.bloco-escuro {
+background-color: var(--cor-fundo-escuro);
+color: var(--cor-texto-claro);
+}
+
+/* Conteúdo do bloco */
+
+.bloco-conteudo {
+position: relative;
+z-index: 2;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+
+text-align: center;
+
+
+}
+
+/* Título */
+
+.bloco-titulo {
+font-size: 56px;
+font-weight: 600;
+line-height: 1.05;
+
+margin-bottom: 8px;
+
+
+}
+
+/* Subtítulo */
+
+.bloco-subtitulo {
+font-size: 28px;
+font-weight: 400;
+line-height: 1.2;
+
+margin-bottom: 12px;
+
+
+}
+
+/* Aviso */
+
+.bloco-aviso {
+font-size: 19px;
+font-weight: 400;
+
+color: var(--cor-aviso);
+
+margin-bottom: 20px;
+
+
+}
+
+.bloco-escuro .bloco-aviso {
+color: var(--cor-aviso-escuro);
+}
+
+/* Botões */
+
+.bloco-botoes {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 16px;
+margin-top: -16PX;
+
+
+}
+
+.botao {
+display: inline-block;
+
+min-width: 60px;
+
+padding: 8px 15px;
+
+border: 1px solid transparent;
+border-radius: 980px;
+
+background-color: var(--cor-azul);
+
+color: #fff;
+
+font-size: 14px;
+font-weight: 400;
+
+text-align: center;
+text-decoration: none;
+
+transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+
+
+}
+
+.botao:hover {
+background-color: var(--cor-azul-hover);
+}
+
+/* Botão secundário */
+
+.botao-secundario {
+background-color: transparent;
+
+color: var(--cor-link);
+
+border-color: var(--cor-link);
+
+
+}
+
+.botao-secundario:hover {
+background-color: var(--cor-azul-hover);
+
+color: #fff;
+
+border-color: var(--cor-azul-hover);
+
+
+}
+
+/* Botão secundário no bloco escuro */
+
+.bloco-escuro .botao-secundario {
+color: var(--cor-link-escuro);
+border-color: var(--cor-link-escuro);
+}
+
+/* Imagem */
+
+.bloco-imagem {
+position: absolute;
+
+top: 0;
+left: 0;
+
+z-index: 1;
+
+width: 100%;
+height: 100%;
+
+display: flex;
+justify-content: center;
+align-items: flex-end;
+
+pointer-events: none;
+
+
+}
+
+.bloco-imagem img {
+width: 100%;
+height: 100%;
+
+object-fit: cover;
+object-position: center;
+
+
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+
+.cabecalho-nav-lista {
+    justify-content: space-around;
+}
+
+.cabecalho-nav-item:not(:first-child):not(:nth-last-child(-n + 2)) {
+    display: none;
+}
+
+.bloco {
+    min-height: 500px;
+}
+
+.bloco-titulo {
+    font-size: 44px;
+}
+
+.bloco-subtitulo {
+    font-size: 24px;
+}
+
+.bloco-aviso {
+    font-size: 16px;
+}
+
+
+}
+
+@media (max-width: 600px) {
+
+.cabecalho {
+    height: 44px;
+}
+
+.cabecalho-nav {
+    padding: 0 16px;
+}
+
+.bloco {
+    min-height: 480px;
+    padding: 36px 20px;
+}
+
+.bloco-titulo {
+    font-size: 36px;
+}
+
+.bloco-subtitulo {
+    font-size: 21px;
+}
+
+.bloco-botoes {
+    gap: 10px;
+}
+
+.botao {
+    padding: 8px 14px;
+}
+
+
+}
